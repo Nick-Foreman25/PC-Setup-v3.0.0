@@ -1,0 +1,71 @@
+{
+  "defaults": {
+    "subnet": "10.10.1.0/24",
+    "gateway": "10.10.1.1",
+    "dns": ["1.1.1.1", "8.8.8.8"],
+
+    "enableFirewall": false,
+    "enableRDP": true,
+    "disableIPv6": true,
+    "removeOneDrive": true,
+    "applyExplorerTweaks": true,
+    "applyFolderPrivacyTweaks": true,
+    "applyGPO": true,
+    "enableWinsockReset": true,
+    "disableXboxGameBar": true,
+    "setPowerSettings": true
+  },
+
+  "credentials": {
+    "ecsUser": "emb-ecs"
+  },
+
+  "softwarePackages": {
+    "Chrome": {
+      "path": "Packages\\Chrome\\ChromeOfflineInstaller.exe",
+      "arguments": "/silent /install"
+    },
+    "FileZilla": {
+      "path": "Packages\\FileZilla\\installer.exe",
+      "arguments": "/quiet"
+    },
+    "ECS": {
+      "path": "Packages\\ecssetup\\TOOLKIT_SETUP.exe",
+      "arguments": "/silent"
+    }
+  },
+
+  "roles": {
+    "ECSSERVER": {
+      "allowMultiple": false,
+      "enableRDP": true,
+      "windowsFeatures": ["NetFx3", "SMBDirect"],
+      "software": ["Chrome", "FileZilla", "ECS"]
+    },
+
+    "ECSSTANDBY": {
+      "allowMultiple": false,
+      "enableRDP": true,
+      "windowsFeatures": ["NetFx3"],
+      "software": ["Chrome", "ECS"]
+    },
+
+    "POS": {
+      "allowMultiple": true,
+      "windowsFeatures": ["NetFx3"],
+      "software": ["Chrome", "ECS"]
+    },
+
+    "KIOSK": {
+      "allowMultiple": true,
+      "windowsFeatures": ["NetFx3"],
+      "software": ["Chrome", "ECS"]
+    },
+
+    "REDEMPTION": {
+      "allowMultiple": true,
+      "windowsFeatures": ["NetFx3"],
+      "software": ["Chrome", "ECS"]
+    }
+  }
+}

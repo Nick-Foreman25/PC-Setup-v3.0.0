@@ -1,0 +1,22 @@
+# Ignore installer packages
+Packages/
+
+# Ignore executable/install files
+*.exe
+*.msi
+*.iso
+*.zip
+
+# Ignore logs
+*.log
+
+# Ignore temp files
+*.tmp
+
+# Ignore Visual Studio files
+.vscode/
+bin/
+obj/
+
+# Ignore PowerShell history
+*.ps1xml

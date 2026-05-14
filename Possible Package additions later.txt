@@ -1,0 +1,12 @@
+					Possible Package additions later
+
+SQL = "SQL": {
+      "path": "C:\\ECSDeploy\\Packages\\SQL\\setup.exe",
+      "arguments": "/ConfigurationFile=Configuration.ini /Q"
+    },
+
+Unifi = "UniFi": {
+      "path": "C:\\ECSDeploy\\Packages\\UniFi\\unifi.exe",
+      "arguments": "/quiet"
+    },
+
